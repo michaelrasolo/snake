@@ -1,0 +1,75 @@
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  background-color: black;
+  color: #3b4f3b;
+  font-family: "Press Start 2P", cursive, sans-serif;
+  letter-spacing: -1px;
+  font-size: 0.5rem;
+}
+
+.screen {
+  width: 80vw;
+  height: 60vw;
+  max-width: 665px;
+  max-height: 500px;
+  /* background-image: linear-gradient(
+    to left bottom,
+    #35751f,
+    #408426,
+    #4a932c,
+    #56a333,
+    #61b33a
+  ); */
+  box-shadow: 0 0 4rem rgba(255, 255, 255, 0.437);
+  border-radius: 0.5rem;
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-image: url(background.png);
+  background-size: cover;
+}
+
+.score-box {
+  display: flex;
+  justify-content: space-between;
+  height: 1rem;
+  width: 50vw;
+  max-width: 400px;
+  max-height: 400px;
+}
+.score-box p {
+  margin: 0;
+
+}
+.game-container {
+  width: 50vw;
+  max-width: 400px;
+  max-height: 400px;
+  height: 50vw;
+  border: solid #3b4f3b 2px;
+  border-radius: 3px;
+  display: grid;
+  grid-template: repeat(30, 1fr) / repeat(30, 1fr);
+}
+
+.food, .head {
+  background-color: #3b4f3b;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.inner-food {
+  width: 40%;
+  height: 40%;
+  border: dashed 0.2vw #b6e2c9;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
