@@ -9,21 +9,18 @@ body {
   font-family: "Press Start 2P", cursive, sans-serif;
   letter-spacing: -1px;
   font-size: 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  /* border: 3px solid yellow; */
 }
 
 .screen {
-  width: 80vw;
-  height: 60vw;
+  width: 80vh;
+  height: 60vh;
   max-width: 665px;
   max-height: 500px;
-  /* background-image: linear-gradient(
-    to left bottom,
-    #35751f,
-    #408426,
-    #4a932c,
-    #56a333,
-    #61b33a
-  ); */
   box-shadow: 0 0 4rem rgba(255, 255, 255, 0.437);
   border-radius: 0.5rem;
   margin-top: 10vh;
@@ -39,26 +36,26 @@ body {
   display: flex;
   justify-content: space-between;
   height: 1rem;
-  width: 50vw;
+  width: 50vh;
   max-width: 400px;
   max-height: 400px;
 }
 .score-box p {
   margin: 0;
-
 }
 .game-container {
-  width: 50vw;
+  width: 50vh;
   max-width: 400px;
   max-height: 400px;
-  height: 50vw;
+  height: 50vh;
   border: solid #3b4f3b 2px;
   border-radius: 3px;
   display: grid;
   grid-template: repeat(30, 1fr) / repeat(30, 1fr);
 }
 
-.food, .head {
+.food,
+.head {
   background-color: #3b4f3b;
   display: flex;
   align-items: center;
@@ -74,84 +71,141 @@ body {
   justify-content: center;
 }
 /* KEYBOARD */
-/* .buttons{
-  display:flex;
-  flex-direction:column;
-  position:relative;
-  top:55%;
-  left:0%;
-  width:150px;
-  height:120px;
-  z-index:1;
+.buttons {
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  width: 150px;
+  height: 20vh;
+  z-index: 1;
+  display: none;
 }
-.button-row1,.button-row2,.button-row3,.button-row4{
-  position:absolute;
-  display:flex;
+.button-row1,
+.button-row2,
+.button-row3,
+.button-row4 {
+  position: absolute;
+  display: flex;
 }
-.button-row1{
-  top:5%;
+.button-row1 {
+  top: 5%;
 }
-.btns{
-  margin:0 20px;
-  font-size:15px;
-  position:absolute;
-  background:#ccc;
+.btns {
+  margin: 0 20px;
+  font-size: 15px;
+  position: absolute;
+  background: #ccc;
 }
-.btn-1,.btn-7,.btn-4,.btn-10{
-  width:30px;
-  height:20px;
-  top:10px;
-  border:1px solid #000;
-  border-radius:50%;
-  text-align:center;
-  transform:rotate(30deg)
+.btn-1,
+.btn-7,
+.btn-4,
+.btn-10 {
+  width: 30px;
+  height: 20px;
+  top: 10px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  text-align: center;
+  transform: rotate(30deg);
 }
-.btn-2,.btn-5,.btn-8,.btn-0{
-  width:30px;
-  height:20px;
-  top:20px;
-  left:43px;
-  border:1px solid #000;
-  border-radius:50%;
-  text-align:center;
+.btn-2,
+.btn-5,
+.btn-8,
+.btn-0 {
+  width: 30px;
+  height: 20px;
+  top: 20px;
+  left: 43px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  text-align: center;
 }
-.btn-3,.btn-6,.btn-9,.btn-12{
-  width:30px;
-  height:20px;
-  top:10px;
-  left:83px;
-  border:1px solid #000;
-  border-radius:50%;
-  text-align:center;
-   transform:rotate(-30deg);
+.btn-3,
+.btn-6,
+.btn-9,
+.btn-12 {
+  width: 30px;
+  height: 20px;
+  top: 10px;
+  left: 83px;
+  border: 1px solid #000;
+  border-radius: 50%;
+  text-align: center;
+  transform: rotate(-30deg);
 }
-.btn-7{
-  top:5px;
+.btn-7 {
+  top: 5px;
 }
-.btn-8{
-  top:12px;
+.btn-8 {
+  top: 12px;
 }
-.btn-9{
-  top:5px;
+.btn-9 {
+  top: 5px;
 }
-.btn-10{
-  top:0px;
-  left:5px;
+.btn-10 {
+  top: 0px;
+  left: 5px;
 }
-.btn-0{
-  top:3px;
-  left:44px;
+.btn-0 {
+  top: 3px;
+  left: 44px;
 }
-.btn-12{
-  top:-2px;
-  left:80px;
+.btn-12 {
+  top: -2px;
+  left: 80px;
 }
-  .button-row2{
-  top:30%;
+.button-row2 {
+  top: 30%;
 }
-.button-row3{
-  top:60%;
+.button-row3 {
+  top: 60%;
 }
-.button-row4{
-  top:90%;
-} */
+.button-row4 {
+  top: 90%;
+}
+
+.btn-1:active,
+.btn-7:active,
+.btn-4:active,
+.btn-10:active {
+  transform: scale(0.9) rotate(30deg);
+}
+
+.btn-3:active,
+.btn-6:active,
+.btn-9:active,
+.btn-12:active {
+  transform: scale(0.9) rotate(-30deg);
+}
+
+.btn-2:active,
+.btn-5:active,
+.btn-8:active,
+.btn-0:active {
+  transform: scale(0.9);
+}
+/* MEDIA QUERIES MOBILE */
+
+@media screen and (max-width: 512px) {
+  .screen {
+    width: 90vw;
+    height: 67vw;
+    margin-top: 5vh;
+  }
+  .game-container {
+    height: 55vw;
+    width: 55vw;
+  }
+  .score-box {
+    width: 60vw;
+  }
+  body {
+    font-size: 0.4rem;
+  }
+  .inner-food {
+    border: dashed 0.2vw #b6e2c9;
+  }
+  .buttons {
+    display: block;
+  }
+}
