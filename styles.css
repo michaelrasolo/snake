@@ -74,48 +74,54 @@ body {
 .buttons {
   display: flex;
   flex-direction: column;
-  position: relative;
-  width: 150px;
+  width: 100%;
   height: 20vh;
   z-index: 1;
   display: none;
+  align-items: center;
+  justify-content: center;
+  margin-top: 4vh;
 }
 .button-row1,
 .button-row2,
 .button-row3,
 .button-row4 {
-  position: absolute;
+  position: relative;
   display: flex;
+  /* border: 1px yellow solid; */
+  height: 50px;
+  width: 100%;
 }
-.button-row1 {
+/* .button-row1 {
   top: 5%;
-}
+} */
 .btns {
-  margin: 0 20px;
+  /* margin: 0 20px; */
   font-size: 15px;
   position: absolute;
+  /* left: 50%; */
   background: #ccc;
 }
 .btn-1,
 .btn-7,
 .btn-4,
 .btn-10 {
-  width: 30px;
-  height: 20px;
-  top: 10px;
+  width: 60px;
+  height: 30px;
   border: 1px solid #000;
   border-radius: 50%;
   text-align: center;
   transform: rotate(30deg);
+  left: calc(25vw);
 }
 .btn-2,
 .btn-5,
 .btn-8,
 .btn-0 {
-  width: 30px;
-  height: 20px;
-  top: 20px;
-  left: 43px;
+  width: 60px;
+  height: 30px;
+  top: 3vh;
+  left: calc(50vw - 30px);
   border: 1px solid #000;
   border-radius: 50%;
   text-align: center;
@@ -124,16 +130,18 @@ body {
 .btn-6,
 .btn-9,
 .btn-12 {
-  width: 30px;
-  height: 20px;
-  top: 10px;
-  left: 83px;
+  width: 60px;
+  height: 30px;
+  /* top: 10px; */
+  left: 0;
   border: 1px solid #000;
   border-radius: 50%;
   text-align: center;
+  left: calc(75vw - 60px);
+
   transform: rotate(-30deg);
 }
-.btn-7 {
+/* .btn-7 {
   top: 5px;
 }
 .btn-8 {
@@ -162,7 +170,7 @@ body {
 }
 .button-row4 {
   top: 90%;
-}
+} */
 
 .btn-1:active,
 .btn-7:active,
