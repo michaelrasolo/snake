@@ -58,6 +58,7 @@ function snakeDirection(e) {
 }
 // NOKIA KEYBOARD
 function keysDirection(e) {
+  console.log(e.target.className);
     if (e.target.className === "btns btn-8" && directionY !== -1) {
       directionX = 0;
       directionY = 1;
