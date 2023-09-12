@@ -17,6 +17,17 @@ const highScoreInput = document.querySelector(".highscore");
 let highScore = localStorage.getItem("highscore") || 0;
 highScoreInput.textContent = highScore;
 
+// Keyboard
+const one = document.querySelector('.btn-1');
+const two = document.querySelector('.btn-2');
+const three = document.querySelector('.btn-3');
+const four = document.querySelector('.btn-4');
+const five = document.querySelector('.btn-5');
+const six = document.querySelector('.btn-6');
+const seven = document.querySelector('.btn-7');
+const eight = document.querySelector('.btn-8');
+const nine = document.querySelector('.btn-9');
+
 function moveFood() {
   (foodX = Math.floor(Math.random() * 30) + 1),
     (foodY = Math.floor(Math.random() * 30) + 1);
@@ -27,7 +38,10 @@ function placeHead() {
     (headY = Math.floor(Math.random() * 30));
 }
 
+// LAPTOP ARROWS
 function snakeDirection(e) {
+
+  
   if (e.key === "ArrowDown" && directionY !== -1) {
     directionX = 0;
     directionY = 1;
@@ -42,6 +56,23 @@ function snakeDirection(e) {
     directionY = 0;
   }
 }
+// NOKIA KEYBOARD
+function keysDirection(e) {
+    if (e.target.className === "btns btn-8" && directionY !== -1) {
+      directionX = 0;
+      directionY = 1;
+    } else if (e.target.className === "btns btn-2" && directionY !== 1) {
+      directionX = 0;
+      directionY = -1;
+    } else if (e.target.className === "btns btn-4" && directionX !== 1) {
+      directionX = -1;
+      directionY = 0;
+    } else if (e.target.className === "btns btn-6" && directionX !== -1) {
+      directionX = 1;
+      directionY = 0;
+    }
+  }
+
 
 function stopGame() {
   clearInterval(gameSpeed);
@@ -50,7 +81,7 @@ function stopGame() {
 }
 
 function play() {
-  console.log("snakeBody", snakeBody);
+  // console.log("snakeBody", snakeBody);
   // Place food point
   let points = `<div class="food" style="grid-area: ${foodY}/${foodX}">  <div class="inner-food"></div></div>`;
 
@@ -98,3 +129,4 @@ function play() {
 moveFood();
 gameSpeed = setInterval(play, 100);
 document.addEventListener("keydown", snakeDirection);
+document.addEventListener('click', keysDirection)
