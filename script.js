@@ -127,6 +127,7 @@ function play() {
 }
 
 moveFood();
+placeHead();
 gameSpeed = setInterval(play, 100);
 document.addEventListener("keydown", snakeDirection);
 document.addEventListener('click', keysDirection)
