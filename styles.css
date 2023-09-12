@@ -95,12 +95,12 @@ body {
   font-size: 15px;
   position: absolute;
   background: #ccc;
+  color: black;
 }
 
 .btns p {
   margin: 0;
   font-size: xx-small;
-  color: black;
 }
 .btn-1,
 .btn-7,
