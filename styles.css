@@ -13,7 +13,6 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  /* border: 3px solid yellow; */
 }
 
 .screen {
@@ -88,19 +87,19 @@ body {
 .button-row4 {
   position: relative;
   display: flex;
-  /* border: 1px yellow solid; */
   height: 50px;
   width: 100%;
 }
-/* .button-row1 {
-  top: 5%;
-} */
+
 .btns {
-  /* margin: 0 20px; */
   font-size: 15px;
   position: absolute;
-  /* left: 50%; */
   background: #ccc;
+}
+
+.btns p {
+  margin: 0;
+  font-size: xx-small;
 }
 .btn-1,
 .btn-7,
@@ -132,8 +131,6 @@ body {
 .btn-12 {
   width: 60px;
   height: 30px;
-  /* top: 10px; */
-  left: 0;
   border: 1px solid #000;
   border-radius: 50%;
   text-align: center;
@@ -141,36 +138,6 @@ body {
 
   transform: rotate(-30deg);
 }
-/* .btn-7 {
-  top: 5px;
-}
-.btn-8 {
-  top: 12px;
-}
-.btn-9 {
-  top: 5px;
-}
-.btn-10 {
-  top: 0px;
-  left: 5px;
-}
-.btn-0 {
-  top: 3px;
-  left: 44px;
-}
-.btn-12 {
-  top: -2px;
-  left: 80px;
-}
-.button-row2 {
-  top: 30%;
-}
-.button-row3 {
-  top: 60%;
-}
-.button-row4 {
-  top: 90%;
-} */
 
 .btn-1:active,
 .btn-7:active,
@@ -215,5 +182,25 @@ body {
   }
   .buttons {
     display: block;
+  }
+}
+@media screen and (max-width: 375px){
+  .btn-1,
+  .btn-7,
+  .btn-4,
+  .btn-10 {
+    left: calc(18vw);
+  }
+  .btn-2,
+  .btn-5,
+  .btn-8,
+  .btn-0 {
+    left: calc(50vw - 30px);
+  }
+  .btn-3,
+  .btn-6,
+  .btn-9,
+  .btn-12 {
+    left: calc(82vw - 60px);
   }
 }
