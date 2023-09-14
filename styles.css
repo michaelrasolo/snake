@@ -106,8 +106,8 @@ body {
 .btn-7,
 .btn-4,
 .btn-10 {
-  width: 60px;
-  height: 30px;
+  width: 80px;
+  height: 40px;
   border: 1px solid #000;
   border-radius: 50%;
   text-align: center;
@@ -118,8 +118,8 @@ body {
 .btn-5,
 .btn-8,
 .btn-0 {
-  width: 60px;
-  height: 30px;
+  width: 80px;
+  height: 40px;
   top: 3vh;
   left: calc(50vw - 30px);
   border: 1px solid #000;
@@ -130,8 +130,8 @@ body {
 .btn-6,
 .btn-9,
 .btn-12 {
-  width: 60px;
-  height: 30px;
+  width: 80px;
+  height: 40px;
   border: 1px solid #000;
   border-radius: 50%;
   text-align: center;
