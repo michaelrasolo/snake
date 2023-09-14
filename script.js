@@ -95,7 +95,7 @@ function keysDirection(e) {
     } else if (e.target.className === "btns btn-9" && directionY === -1 || directionY === 1) {
       directionX = 1;
       directionY = 0;
-    } 
+    }
   }
 
 
