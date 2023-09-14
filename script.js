@@ -18,15 +18,15 @@ let highScore = localStorage.getItem("highscore") || 0;
 highScoreInput.textContent = highScore;
 
 // Keyboard
-const one = document.querySelector('.btn-1');
-const two = document.querySelector('.btn-2');
-const three = document.querySelector('.btn-3');
-const four = document.querySelector('.btn-4');
-const five = document.querySelector('.btn-5');
-const six = document.querySelector('.btn-6');
-const seven = document.querySelector('.btn-7');
-const eight = document.querySelector('.btn-8');
-const nine = document.querySelector('.btn-9');
+const one = document.querySelector(".btn-1");
+const two = document.querySelector(".btn-2");
+const three = document.querySelector(".btn-3");
+const four = document.querySelector(".btn-4");
+const five = document.querySelector(".btn-5");
+const six = document.querySelector(".btn-6");
+const seven = document.querySelector(".btn-7");
+const eight = document.querySelector(".btn-8");
+const nine = document.querySelector(".btn-9");
 
 function moveFood() {
   (foodX = Math.floor(Math.random() * 30) + 1),
@@ -40,8 +40,6 @@ function placeHead() {
 
 // LAPTOP ARROWS
 function snakeDirection(e) {
-
-  
   if (e.key === "ArrowDown" && directionY !== -1) {
     directionX = 0;
     directionY = 1;
@@ -58,49 +56,87 @@ function snakeDirection(e) {
 }
 // NOKIA KEYBOARD
 function keysDirection(e) {
-    if (e.target.className === "btns btn-8" && directionY !== -1) {
-      directionX = 0;
-      directionY = 1;
-    } else if (e.target.className === "btns btn-2" && directionY !== 1) {
-      directionX = 0;
-      directionY = -1;
-    } else if (e.target.className === "btns btn-4" && directionX !== 1) {
-      directionX = -1;
-      directionY = 0;
-    } else if (e.target.className === "btns btn-6" && directionX !== -1) {
-      directionX = 1;
-      directionY = 0;
-    } 
-    else if (e.target.className === "btns btn-1" && (directionX === -1 || directionX === 1)) {
-      directionX = 0;
-      directionY = -1;
-    } else if (e.target.className === "btns btn-1" && (directionY === -1 || directionY === 1)) {
-      directionX = -1;
-      directionY = 0;
-    } 
-    else if (e.target.className === "btns btn-3" && (directionX === -1 || directionX === 1)) {
-      directionX = 0;
-      directionY = -1;
-    } else if (e.target.className === "btns btn-3" && (directionY === -1 || directionY === 1)) {
-      directionX = 1;
-      directionY = 0;
-    } else if (e.target.className === "btns btn-7" && (directionX === -1 || directionX === 1)) {
-      directionX = 0;
-      directionY = 1;
-    } else if (e.target.className === "btns btn-7" && (directionY === -1 || directionY === 1)) {
-      directionX = -1;
-      directionY = 0;
-    } else if (e.target.className === "btns btn-9" && (directionX === -1 || directionX === 1)) {
-      directionX = 0;
-      directionY = 1;
-    } else if (e.target.className === "btns btn-9" && (directionY === -1 || directionY === 1)) {
-      directionX = 1;
-      directionY = 0;
-    }
-    console.log("X:",directionX,"Y:",directionY);
-
+  console.log(e);
+  const directionMap = [
+    { className: 'btns btn-8', directions: [0, 1] },
+    { className: 'btns btn-2', directions: [0, -1] },
+    { className: 'btns btn-4', directions: [-1, 0] },
+    { className: 'btns btn-6', directions: [1, 0] },
+    { className: 'btns btn-1', directions: (directionY === -1 || directionY === 1) ? [-1,0]:[0,-1]},
+    { className: 'btns btn-3', directions: (directionY === -1 || directionY === 1) ? [1,0]:[0,-1]},
+    { className: 'btns btn-7', directions: (directionY === -1 || directionY === 1) ? [-1,0]:[0,1]},
+    { className: 'btns btn-9', directions: (directionY === -1 || directionY === 1 )? [1,0]:[0,1]},
+  ];
+directionMap.forEach(line => {
+  if (line.className ===e.target.className){
+    directionX = line.directions[0];
+    directionY = line.directions[1];
   }
-
+  return
+});
+  // if (e.target.className === "btns btn-8" && directionY !== -1) {
+  //   directionX = 0;
+  //   directionY = 1;
+  // } else if (e.target.className === "btns btn-2" && directionY !== 1) {
+  //   directionX = 0;
+  //   directionY = -1;
+  // } else if (e.target.className === "btns btn-4" && directionX !== 1) {
+  //   directionX = -1;
+  //   directionY = 0;
+  // } else if (e.target.className === "btns btn-6" && directionX !== -1) {
+  //   directionX = 1;
+  //   directionY = 0;
+  // } else if (
+  //   e.target.className === "btns btn-1" &&
+  //   (directionX === -1 || directionX === 1)
+  // ) {
+  //   directionX = 0;
+  //   directionY = -1;
+  // } else if (
+  //   e.target.className === "btns btn-1" &&
+  //   (directionY === -1 || directionY === 1)
+  // ) {
+  //   directionX = -1;
+  //   directionY = 0;
+  // } else if (
+  //   e.target.className === "btns btn-3" &&
+  //   (directionX === -1 || directionX === 1)
+  // ) {
+  //   directionX = 0;
+  //   directionY = -1;
+  // } else if (
+  //   e.target.className === "btns btn-3" &&
+  //   (directionY === -1 || directionY === 1)
+  // ) {
+  //   directionX = 1;
+  //   directionY = 0;
+  // } else if (
+  //   e.target.className === "btns btn-7" &&
+  //   (directionX === -1 || directionX === 1)
+  // ) {
+  //   directionX = 0;
+  //   directionY = 1;
+  // } else if (
+  //   e.target.className === "btns btn-7" &&
+  //   (directionY === -1 || directionY === 1)
+  // ) {
+  //   directionX = -1;
+  //   directionY = 0;
+  // } else if (
+  //   e.target.className === "btns btn-9" &&
+  //   (directionX === -1 || directionX === 1)
+  // ) {
+  //   directionX = 0;
+  //   directionY = 1;
+  // } else if (
+  //   e.target.className === "btns btn-9" &&
+  //   (directionY === -1 || directionY === 1)
+  // ) {
+  //   directionX = 1;
+  //   directionY = 0;
+  // }
+  console.log("X:", directionX, "Y:", directionY);
+}
 
 function stopGame() {
   clearInterval(gameSpeed);
@@ -158,4 +194,4 @@ moveFood();
 placeHead();
 gameSpeed = setInterval(play, 100);
 document.addEventListener("keydown", snakeDirection);
-document.addEventListener('click', keysDirection)
+document.addEventListener("click", keysDirection);
