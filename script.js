@@ -58,7 +58,7 @@ function snakeDirection(e) {
 }
 // NOKIA KEYBOARD
 function keysDirection(e) {
-  console.log(e.target.className);
+  console.log("X:",directionX,"Y:",directionY);
     if (e.target.className === "btns btn-8" && directionY !== -1) {
       directionX = 0;
       directionY = 1;
@@ -71,31 +71,33 @@ function keysDirection(e) {
     } else if (e.target.className === "btns btn-6" && directionX !== -1) {
       directionX = 1;
       directionY = 0;
-    } else if (e.target.className === "btns btn-1" && directionX === -1 || directionX === 1) {
-      directionX = 0;
-      directionY = -1;
-    } else if (e.target.className === "btns btn-1" && directionY === -1 || directionY === 1) {
-      directionX = -1;
-      directionY = 0;
-    } else if (e.target.className === "btns btn-3" && directionX === -1 || directionX === 1) {
-      directionX = 0;
-      directionY = -1;
-    } else if (e.target.className === "btns btn-3" && directionY === -1 || directionY === 1) {
-      directionX = 1;
-      directionY = 0;
-    } else if (e.target.className === "btns btn-7" && directionX === -1 || directionX === 1) {
-      directionX = 0;
-      directionY = 1;
-    } else if (e.target.className === "btns btn-7" && directionY === -1 || directionY === 1) {
-      directionX = 1;
-      directionY = 0;
-    } else if (e.target.className === "btns btn-9" && directionX === -1 || directionX === 1) {
-      directionX = 0;
-      directionY = 1;
-    } else if (e.target.className === "btns btn-9" && directionY === -1 || directionY === 1) {
-      directionX = 1;
-      directionY = 0;
-    }
+    } 
+    // else if (e.target.className === "btns btn-1" && (directionX === -1 || directionX === 1)) {
+    //   directionX = 0;
+    //   directionY = -1;
+    // } else if (e.target.className === "btns btn-1" && directionY === -1 || directionY === 1) {
+    //   directionX = -1;
+    //   directionY = 0;
+    // } 
+    // else if (e.target.className === "btns btn-3" && directionX === -1 || directionX === 1) {
+    //   directionX = 0;
+    //   directionY = -1;
+    // } else if (e.target.className === "btns btn-3" && directionY === -1 || directionY === 1) {
+    //   directionX = 1;
+    //   directionY = 0;
+    // } else if (e.target.className === "btns btn-7" && directionX === -1 || directionX === 1) {
+    //   directionX = 0;
+    //   directionY = 1;
+    // } else if (e.target.className === "btns btn-7" && directionY === -1 || directionY === 1) {
+    //   directionX = 1;
+    //   directionY = 0;
+    // } else if (e.target.className === "btns btn-9" && directionX === -1 || directionX === 1) {
+    //   directionX = 0;
+    //   directionY = 1;
+    // } else if (e.target.className === "btns btn-9" && directionY === -1 || directionY === 1) {
+    //   directionX = 1;
+    //   directionY = 0;
+    // }
   }
 
 
