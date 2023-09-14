@@ -98,9 +98,10 @@ body {
   color: black;
 }
 
-.btns p {
+.btns span {
   margin: 0;
   font-size: xx-small;
+  display: block;
 }
 .btn-1,
 .btn-7,
