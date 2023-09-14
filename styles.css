@@ -20,7 +20,7 @@ body {
   height: 60vh;
   max-width: 665px;
   max-height: 500px;
-  box-shadow: 0 0 4rem rgba(255, 255, 255, 0.437);
+  box-shadow: 0 0 5rem rgba(210, 255, 216, 0.7);
   border-radius: 0.5rem;
   margin-top: 10vh;
   display: flex;

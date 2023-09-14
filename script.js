@@ -17,17 +17,6 @@ const highScoreInput = document.querySelector(".highscore");
 let highScore = localStorage.getItem("highscore") || 0;
 highScoreInput.textContent = highScore;
 
-// Keyboard
-const one = document.querySelector(".btn-1");
-const two = document.querySelector(".btn-2");
-const three = document.querySelector(".btn-3");
-const four = document.querySelector(".btn-4");
-const five = document.querySelector(".btn-5");
-const six = document.querySelector(".btn-6");
-const seven = document.querySelector(".btn-7");
-const eight = document.querySelector(".btn-8");
-const nine = document.querySelector(".btn-9");
-
 function moveFood() {
   (foodX = Math.floor(Math.random() * 30) + 1),
     (foodY = Math.floor(Math.random() * 30) + 1);
@@ -56,7 +45,7 @@ function snakeDirection(e) {
 }
 // NOKIA KEYBOARD
 function keysDirection(e) {
-  console.log(e);
+  console.log(e.target.className);
   const directionMap = [
     { className: 'btns btn-8', directions: [0, 1] },
     { className: 'btns btn-2', directions: [0, -1] },
@@ -74,67 +63,7 @@ directionMap.forEach(line => {
   }
   return
 });
-  // if (e.target.className === "btns btn-8" && directionY !== -1) {
-  //   directionX = 0;
-  //   directionY = 1;
-  // } else if (e.target.className === "btns btn-2" && directionY !== 1) {
-  //   directionX = 0;
-  //   directionY = -1;
-  // } else if (e.target.className === "btns btn-4" && directionX !== 1) {
-  //   directionX = -1;
-  //   directionY = 0;
-  // } else if (e.target.className === "btns btn-6" && directionX !== -1) {
-  //   directionX = 1;
-  //   directionY = 0;
-  // } else if (
-  //   e.target.className === "btns btn-1" &&
-  //   (directionX === -1 || directionX === 1)
-  // ) {
-  //   directionX = 0;
-  //   directionY = -1;
-  // } else if (
-  //   e.target.className === "btns btn-1" &&
-  //   (directionY === -1 || directionY === 1)
-  // ) {
-  //   directionX = -1;
-  //   directionY = 0;
-  // } else if (
-  //   e.target.className === "btns btn-3" &&
-  //   (directionX === -1 || directionX === 1)
-  // ) {
-  //   directionX = 0;
-  //   directionY = -1;
-  // } else if (
-  //   e.target.className === "btns btn-3" &&
-  //   (directionY === -1 || directionY === 1)
-  // ) {
-  //   directionX = 1;
-  //   directionY = 0;
-  // } else if (
-  //   e.target.className === "btns btn-7" &&
-  //   (directionX === -1 || directionX === 1)
-  // ) {
-  //   directionX = 0;
-  //   directionY = 1;
-  // } else if (
-  //   e.target.className === "btns btn-7" &&
-  //   (directionY === -1 || directionY === 1)
-  // ) {
-  //   directionX = -1;
-  //   directionY = 0;
-  // } else if (
-  //   e.target.className === "btns btn-9" &&
-  //   (directionX === -1 || directionX === 1)
-  // ) {
-  //   directionX = 0;
-  //   directionY = 1;
-  // } else if (
-  //   e.target.className === "btns btn-9" &&
-  //   (directionY === -1 || directionY === 1)
-  // ) {
-  //   directionX = 1;
-  //   directionY = 0;
-  // }
+
   console.log("X:", directionX, "Y:", directionY);
 }
 
@@ -145,7 +74,6 @@ function stopGame() {
 }
 
 function play() {
-  // console.log("snakeBody", snakeBody);
   // Place food point
   let points = `<div class="food" style="grid-area: ${foodY}/${foodX}">  <div class="inner-food"></div></div>`;
 
@@ -156,7 +84,7 @@ function play() {
   // Eating event
   if (headX === foodX && headY === foodY) {
     moveFood();
-    snakeBody.push([]);
+    snakeBody.push([]); // body element will take the position of the previous one
     score++;
     scoreInput.textContent = score;
     if (score > highScore) {
