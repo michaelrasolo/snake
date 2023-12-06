@@ -95,6 +95,7 @@ body {
   align-items: center;
   justify-content: center;
   margin-top: 6vh;
+  border: #ccc solid 1px;
 }
 .button-row1,
 .button-row2,
@@ -128,7 +129,7 @@ body {
   border-radius: 50%;
   text-align: center;
   transform: rotate(30deg);
-  left: calc(18vw);
+  left: calc(25vw);
 }
 .btn-2,
 .btn-5,
@@ -137,7 +138,7 @@ body {
   width: 80px;
   height: 40px;
   top: 3vh;
-  left: calc(50vw - 40px);
+  left: calc(50vw - 30px);
   border: 1px solid #000;
   border-radius: 50%;
   text-align: center;
@@ -151,7 +152,7 @@ body {
   border: 1px solid #000;
   border-radius: 50%;
   text-align: center;
-  left: calc(82vw - 80px);
+  left: calc(75vw - 60px);
 
   transform: rotate(-30deg);
 }
@@ -280,18 +281,18 @@ body {
   .btn-7,
   .btn-4,
   .btn-10 {
-    left: calc(10vw);
+    left: calc(18vw);
   }
   .btn-2,
   .btn-5,
   .btn-8,
   .btn-0 {
-    left: calc(50vw - 40px);
+    left: calc(50vw - 30px);
   }
   .btn-3,
   .btn-6,
   .btn-9,
   .btn-12 {
-    left: calc(90vw - 80px);
+    left: calc(82vw - 60px);
   }
 }
