@@ -42,8 +42,9 @@ h1 {
   font-size: 1.5rem;
 }
 .screen {
-  width: 80vh;
-  height: 60vh;
+  /* width: 80vh; */
+  /* height: 60vh; */
+  aspect-ratio: 4/3;
   max-width: 665px;
   max-height: 500px;
   box-shadow: 0 0 5rem rgba(210, 255, 216, 0.7);
@@ -53,7 +54,7 @@ h1 {
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  background-image: url(assets/background.png);
+  /* background-image: url(assets/background.png);
   background-size: cover;
   flex-shrink: 0;
 }
@@ -71,9 +72,9 @@ h1 {
 }
 .game-container {
   width: 50vh;
+  aspect-ratio: 1;
   max-width: 400px;
   max-height: 400px;
-  height: 50vh;
   border: solid #3b4f3b 2px;
   border-radius: 3px;
   display: grid;
@@ -107,6 +108,7 @@ h1 {
   align-items: center;
   justify-content: center;
   margin-top: 6vh;
+  border: #ccc solid 1px;
 }
 .button-row1,
 .button-row2,
@@ -140,7 +142,7 @@ h1 {
   border-radius: 50%;
   text-align: center;
   transform: rotate(30deg);
-  left: calc(18vw);
+  left: calc(25vw);
 }
 .btn-2,
 .btn-5,
@@ -149,7 +151,7 @@ h1 {
   width: 80px;
   height: 40px;
   top: 3vh;
-  left: calc(50vw - 40px);
+  left: calc(50vw - 30px);
   border: 1px solid #000;
   border-radius: 50%;
   text-align: center;
@@ -163,7 +165,7 @@ h1 {
   border: 1px solid #000;
   border-radius: 50%;
   text-align: center;
-  left: calc(82vw - 80px);
+  left: calc(75vw - 60px);
 
   transform: rotate(-30deg);
 }
@@ -257,45 +259,30 @@ input:checked + .slider:before {
 /* MEDIA QUERIES MOBILE */
 
 @media screen and (max-width: 512px) {
-  .screen {
-    width: 90vw;
-    height: 67vw;
-    margin-top: 5vh;
-  }
-  .game-container {
-    height: 55vw;
-    width: 55vw;
-  }
-  .score-box {
-    width: 60vw;
-  }
-  body {
-    font-size: 0.4rem;
-  }
-  .inner-food {
-    border: dashed 0.2vw #b6e2c9;
-  }
+
+  
   .buttons {
     display: block;
   }
 }
 @media screen and (max-width: 375px) {
+@media screen and (max-width: 375px) {
   .btn-1,
   .btn-7,
   .btn-4,
   .btn-10 {
-    left: calc(10vw);
+    left: calc(18vw);
   }
   .btn-2,
   .btn-5,
   .btn-8,
   .btn-0 {
-    left: calc(50vw - 40px);
+    left: calc(50vw - 30px);
   }
   .btn-3,
   .btn-6,
   .btn-9,
   .btn-12 {
-    left: calc(90vw - 80px);
+    left: calc(82vw - 60px);
   }
 }
