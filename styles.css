@@ -1,9 +1,13 @@
+* {
+  box-sizing: border-box;
+}
+
 body {
+  width: 100%;
   margin: 0;
-  padding: 3%;
   display: flex;
   justify-content: center;
-  height: 100vh;
+  height: 100%;
   background-color: black;
   color: #3b4f3b;
   font-family: "Press Start 2P", cursive, sans-serif;
@@ -13,23 +17,26 @@ body {
   flex-direction: column;
   align-items: center;
   justify-content: flex-start;
-  box-sizing:content-box;
+  padding: 1vw;
+  position: relative;
 }
 header {
+  /* padding: 3%; */
   display: flex;
- justify-content: space-between;
- align-items: center;
-  width: 100%;
+  justify-content: space-between;
+  align-items: center;
   margin-bottom: 3%;
-
+  /* border: red 1px solid; */
+  flex-grow: 1;
+  width: 100%;
 }
-.switch-container{
+.switch-container {
   display: flex;
   justify-content: center;
   align-items: center;
   gap: 1vw;
 }
-.icon{
+.icon {
   width: 30px;
 }
 h1,
@@ -98,7 +105,6 @@ h1 {
 }
 /* KEYBOARD */
 .buttons {
-  display: flex;
   flex-direction: column;
   width: 100%;
   height: 20vh;
@@ -229,10 +235,9 @@ h1 {
   background-color: #3b4f3b;
   -webkit-transition: 0.4s;
   transition: 0.4s;
-  
 }
 
-.slider:hover:before{
+.slider:hover:before {
   background-color: #b8e4cc;
 }
 
@@ -246,7 +251,6 @@ input:checked + .slider:before {
   transform: translateX(1.3rem);
 }
 
-/* Rounded sliders */
 .slider.round {
   border-radius: 1.7rem;
 }
@@ -254,6 +258,7 @@ input:checked + .slider:before {
 .slider.round:before {
   border-radius: 50%;
 }
+
 /* MEDIA QUERIES MOBILE */
 
 @media screen and (max-width: 512px) {
@@ -276,7 +281,7 @@ input:checked + .slider:before {
     border: dashed 0.2vw #b6e2c9;
   }
   .buttons {
-    display: block;
+    display: flex;
   }
 }
 @media screen and (max-width: 375px) {
@@ -298,4 +303,9 @@ input:checked + .slider:before {
   .btn-12 {
     left: calc(90vw - 80px);
   }
+}
+
+/* Update this selector to match your switch input */
+.switch input:not(:checked) + .slider + .icon + .buttons {
+  display: flex;
 }
